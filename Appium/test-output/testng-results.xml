@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-19T08:00:40 IST" name="Default suite" finished-at="2025-10-19T08:01:02 IST" duration-ms="22143">
+    <groups>
+    </groups>
+    <test started-at="2025-10-19T08:00:40 IST" name="Default test" finished-at="2025-10-19T08:01:02 IST" duration-ms="22143">
+      <class name="practice.MiscellanousAppiumActions">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:40 IST" name="configureAppium" finished-at="2025-10-19T08:00:47 IST" duration-ms="6315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configureAppium -->
+        <test-method signature="Misllenious()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:47 IST" name="Misllenious" finished-at="2025-10-19T08:00:59 IST" duration-ms="12271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Misllenious -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:59 IST" name="tearDown" finished-at="2025-10-19T08:01:02 IST" duration-ms="3501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- practice.MiscellanousAppiumActions -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
