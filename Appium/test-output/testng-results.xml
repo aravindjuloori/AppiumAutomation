@@ -1,25 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-19T08:00:40 IST" name="Default suite" finished-at="2025-10-19T08:01:02 IST" duration-ms="22143">
+  <suite started-at="2025-10-21T23:00:22 IST" name="Default suite" finished-at="2025-10-21T23:00:23 IST" duration-ms="922">
     <groups>
     </groups>
-    <test started-at="2025-10-19T08:00:40 IST" name="Default test" finished-at="2025-10-19T08:01:02 IST" duration-ms="22143">
-      <class name="practice.MiscellanousAppiumActions">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:40 IST" name="configureAppium" finished-at="2025-10-19T08:00:47 IST" duration-ms="6315" status="PASS">
+    <test started-at="2025-10-21T23:00:22 IST" name="Default test" finished-at="2025-10-21T23:00:23 IST" duration-ms="922">
+      <class name="appiumPractise.AppiumBasics">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:appiumPractise.AppiumBasics@78691363]" started-at="2025-10-21T23:00:22 IST" name="configureAppium" finished-at="2025-10-21T23:00:23 IST" duration-ms="853" status="FAIL">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: The Android SDK root folder 'C:\Users\Aravind\AppData\Local\Android\Sdk;' does not exist on the local file system. Read https://developer.android.com/studio/command-line/variables for more details 
+Host info: host: 'LAPTOP-NCNC6016', ip: '192.168.29.32'
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: The Android SDK root folder 'C:\Users\Aravind\AppData\Local\Android\Sdk;' does not exist on the local file system. Read https://developer.android.com/studio/command-line/variables for more details 
+Host info: host: 'LAPTOP-NCNC6016', ip: '192.168.29.32'
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:108)
+at appiumPractise.BaseTest.configureAppium(BaseTest.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="Misllenious()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:47 IST" name="Misllenious" finished-at="2025-10-19T08:00:59 IST" duration-ms="12271" status="PASS">
+        <test-method signature="wifiSettingName()[pri:0, instance:appiumPractise.AppiumBasics@78691363]" started-at="2025-10-21T23:00:23 IST" name="wifiSettingName" finished-at="2025-10-21T23:00:23 IST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
+            <message>
+              <![CDATA[Could not start a new session. Response code 500. Message: The Android SDK root folder 'C:\Users\Aravind\AppData\Local\Android\Sdk;' does not exist on the local file system. Read https://developer.android.com/studio/command-line/variables for more details 
+Host info: host: 'LAPTOP-NCNC6016', ip: '192.168.29.32'
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: The Android SDK root folder 'C:\Users\Aravind\AppData\Local\Android\Sdk;' does not exist on the local file system. Read https://developer.android.com/studio/command-line/variables for more details 
+Host info: host: 'LAPTOP-NCNC6016', ip: '192.168.29.32'
+Build info: version: '4.37.0', revision: '3c1da1e342'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}]}]
+Capabilities {appium:app: C:\Users\Aravind\eclipse-wo..., appium:automationName: UIAutomator2, appium:deviceName: AravindEmulator, platformName: ANDROID}
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:114)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:75)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:61)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:178)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:243)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:308)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:98)
+at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:109)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:108)
+at appiumPractise.BaseTest.configureAppium(BaseTest.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Misllenious -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:practice.MiscellanousAppiumActions@78691363]" started-at="2025-10-19T08:00:59 IST" name="tearDown" finished-at="2025-10-19T08:01:02 IST" duration-ms="3501" status="PASS">
+        </test-method> <!-- wifiSettingName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:appiumPractise.AppiumBasics@78691363]" started-at="2025-10-21T23:00:23 IST" name="tearDown" finished-at="2025-10-21T23:00:23 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- practice.MiscellanousAppiumActions -->
+      </class> <!-- appiumPractise.AppiumBasics -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

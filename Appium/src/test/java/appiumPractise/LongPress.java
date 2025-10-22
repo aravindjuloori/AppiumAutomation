@@ -1,4 +1,4 @@
-package practice;
+package appiumPractise;
 
 import java.time.Duration;
 

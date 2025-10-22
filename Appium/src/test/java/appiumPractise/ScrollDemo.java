@@ -1,4 +1,4 @@
-package practice;
+package appiumPractise;
 
 
 import org.openqa.selenium.JavascriptExecutor;

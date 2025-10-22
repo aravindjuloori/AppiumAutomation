@@ -1,4 +1,5 @@
-package practice;
+package appiumPractise;
+
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -21,7 +22,6 @@ public class AppiumBasics extends BaseTest {
 		
 		Assert.assertEquals(alertTitle, "WiFi settings");
 		driver.findElement(By.id("android:id/edit")).sendKeys("AravindWifi");
-		//driver.findElement(By.id("android:id/button1")).click();
 		driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
 		
 	

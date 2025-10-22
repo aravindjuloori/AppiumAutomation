@@ -1,4 +1,4 @@
-package practice;
+package appiumPractise;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -39,8 +39,8 @@ public class BaseTest {
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("AravindEmulator");
 		options.setPlatformName("Android");
-		options.setApp("C:\\Users\\Aravind\\eclipse-workspace\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-
+		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		
 		// Android device or ios device
 		// appium code --> appium server
 		URL appiumServerUrl = URI.create("http://127.0.0.1:4723").toURL();
