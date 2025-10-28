@@ -18,6 +18,8 @@ public class ScrollDemo extends BaseTest {
 		
 		//where to scroll is known prior
 		//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"))"));
+		
+		
 		//UiAutomator method which google has invented i.e.,androidUIAutomator
 		
 		//in google engine there is class called UiScrollable
@@ -26,6 +28,10 @@ public class ScrollDemo extends BaseTest {
 		//in this we use a method we dont have prior idea
 
 		scrollToEndAction();
+		
+		//boolean canScrollMore=(Boolean) ((JavascriptExecutor)driver).executeScript("mobile: scrollGesture" , ImmutableMap.of("left",100 ,"top",100,"height" ,200 ,"width",200,"direction","down","percent",3.0));
+		
+		
 		
 	
 		

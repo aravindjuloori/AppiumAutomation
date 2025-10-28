@@ -25,6 +25,8 @@ public class SwipeDemo extends BaseTest{
 		
 		//swipe
 		swipeAction(firstImage,"left");
+		
+		//((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",((RemoteWebElement)firstImage).getId(),"direction", "left","percent",0.75));
 		Assert.assertEquals(driver.findElement(By.xpath("(//android.widget.ImageView)[1]")).getAttribute("focusable"),"false");
 		
 	}
