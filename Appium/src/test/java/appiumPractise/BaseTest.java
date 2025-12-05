@@ -37,33 +37,38 @@ public class BaseTest {
 
 		// Setting the Capabilities
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("10BE1Y0BZM0012Y");
+		// options.setDeviceName("10BE1Y0BZM0012Y");
+		options.setDeviceName("AravindEmulator");
 		options.setPlatformName("Android");
+	//	options.setChromedriverExecutable("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\chromedriver.exe");
 
-		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-		// options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		 options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		//options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
 
 		// Android device or ios device
 		// appium code --> appium server
 		URL appiumServerUrl = URI.create("http://127.0.0.1:4723").toURL();
 		driver = new AndroidDriver(appiumServerUrl, options);
-		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}
-	
-	
+
 	public void longPressAction(WebElement ele) {
 		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
 				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "duration", 2000));
 
 	}
-	
+
 	public void swipeAction(WebElement ele, String direction) {
 		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId",
 				((RemoteWebElement) ele).getId(), "direction", direction, "percent", 0.75));
 	}
 
+	public void dragGesture(WebElement source, int endX, int endY) {
+		((JavascriptExecutor) driver).executeScript("mobile: dragGesture",
+				ImmutableMap.of("elementId", ((RemoteWebElement) source).getId(), "endX", endX, "endY", endY));
+
+	}
 
 	public void scrollToEndAction() {
 		boolean canScrollMore;
@@ -74,11 +79,16 @@ public class BaseTest {
 		} while (canScrollMore);
 	}
 
-	
+	public Double getFormattedAmount(String amount) {
+		Double price = Double.parseDouble(amount.substring(1));
+		return price;
+
+	}
+
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
-		service.stop();
+		service.stop();  // to stop the appium server
 
 	}
 
