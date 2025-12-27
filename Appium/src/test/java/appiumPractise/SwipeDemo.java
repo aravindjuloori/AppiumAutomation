@@ -5,11 +5,7 @@ import org.openqa.selenium.WebElement;
 import io.appium.java_client.AppiumBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-/*
- * import org.openqa.selenium.JavascriptExecutor;
-	import com.google.common.collect.ImmutableMap;
- * import org.openqa.selenium.remote.RemoteWebElement;
- * */
+
 
 
 public class SwipeDemo extends BaseTest{

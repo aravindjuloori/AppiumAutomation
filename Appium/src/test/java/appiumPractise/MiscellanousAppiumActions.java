@@ -22,9 +22,7 @@ public class MiscellanousAppiumActions extends BaseTest {
 		//Actual automation
 		
 		  Activity activity=new Activity("io.appium.android.apis","io.appium.android.apis.preference.PreferenceDependencies");
-		  
-		  
-		  ((JavascriptExecutor) driver).executeScript("mobile: startActivity" ,
+		    ((JavascriptExecutor) driver).executeScript("mobile: startActivity" ,
 		  ImmutableMap.of("intent","io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies"));
 		 
 		//driver.findElement(AppiumBy.accessibilityId("Preference")).click();
