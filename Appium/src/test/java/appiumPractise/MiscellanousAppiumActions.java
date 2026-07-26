@@ -14,43 +14,46 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class MiscellanousAppiumActions extends BaseTest {
-	
+
 	@Test
-	public void Misllenious() 
-	{
-		//
-		//Actual automation
-		
-		  Activity activity=new Activity("io.appium.android.apis","io.appium.android.apis.preference.PreferenceDependencies");
-		    ((JavascriptExecutor) driver).executeScript("mobile: startActivity" ,
-		  ImmutableMap.of("intent","io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies"));
-		 
-		//driver.findElement(AppiumBy.accessibilityId("Preference")).click();
-		//driver.findElement(By.xpath("//android.widget.TextView[@content-desc='3. Preference dependencies']")).click();
+	public void Misllenious() {
+
+		// Actual automation
+
+		// adb shell dumpsys window|find "mCurrentFocus" - for windows to know the app
+		// package and app activity
+		// adb shell dumpsys window|grep -E "mCurrentFocus" -- for MAC
+
+		Activity activity = new Activity("io.appium.android.apis",
+				"io.appium.android.apis.preference.PreferenceDependencies");
+
+		driver.executeScript("mobile:startActivity", ImmutableMap.of("intent",
+				"io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies"));
+
+		// driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+		// driver.findElement(By.xpath("//android.widget.TextView[@content-desc='3.
+		// Preference dependencies']")).click();
 		driver.findElement(By.id("android:id/checkbox")).click();
-		DeviceRotation landscape=new DeviceRotation(0,0,90);
+
+		DeviceRotation landscape = new DeviceRotation(0, 0, 90); // to rotate the screen in the device
 		driver.rotate(landscape);
+
 		driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
-		String alertTitle=driver.findElement(By.id("android:id/alertTitle")).getText();
-		
+		String alertTitle = driver.findElement(By.id("android:id/alertTitle")).getText();
+
 		Assert.assertEquals(alertTitle, "WiFi settings");
-		
+
 		driver.setClipboardText("Aravind Wifi");
 		driver.findElement(By.id("android:id/edit")).sendKeys(driver.getClipboardText());
-		
-		
-		  driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-		  driver.hideKeyboard();
-		  //driver.findElement(By.id("android:id/button1")).click();
-		  driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
-		  
-		  driver.pressKey(new KeyEvent(AndroidKey.BACK));
-		  driver.pressKey(new KeyEvent(AndroidKey.HOME));
-		 
-		
-	
-		
-		
+
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+		// driver.hideKeyboard();
+		// driver.findElement(By.id("android:id/button1")).click();
+		driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
+
+		driver.pressKey(new KeyEvent(AndroidKey.BACK));
+		driver.pressKey(new KeyEvent(AndroidKey.HOME));
+
 	}
 
 }

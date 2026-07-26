@@ -71,15 +71,20 @@ public class Ecommerce_tc3_hybrid extends BaseTest {
 		Thread.sleep(6000);
 		
 		Set<String> contexts=driver.getContextHandles();
-		
+
 		for(String ContextName:contexts) {
 			System.out.println(ContextName);
 		}
 		
-		driver.context("WEBVIEW_com.androidsample.generalstore");
-		driver.findElement(By.name("q")).sendKeys("Rahul shetty Academy");
-		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-		driver.pressKey(new KeyEvent(AndroidKey.BACK));
+		
+		  driver.context("WEBVIEW_com.androidsample.generalstore");
+		  driver.findElement(By.name("q")).sendKeys("Rahul shetty Academy");
+		  driver.findElement(By.name("q")).sendKeys(Keys.ENTER); 
+		  driver.pressKey(new KeyEvent(AndroidKey.BACK));
+		  driver.context("NATIVE_APP");
+		  driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Aravind Juloori");
+		
+		 
 		
 		
 

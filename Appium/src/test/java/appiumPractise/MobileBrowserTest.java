@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 public class MobileBrowserTest extends BrowserBaseTest {
 	
 	
-	
 	@Test
 	public void browserTest() {
 		

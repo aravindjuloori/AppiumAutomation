@@ -35,38 +35,33 @@ public class Ecommerce_tc2 extends BaseTest{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.attributeContains(driver.findElement(By.id("com.androidsample.generalstore:id/toolbar_title")),"text", "Cart"));
 	 
-	 List<WebElement> productPrices=driver.findElements(By.id("com.androidsample.generalstore:id/productPrice"));
+		List<WebElement> productPrices=driver.findElements(By.id("com.androidsample.generalstore:id/productPrice"));
+		
+		int count=productPrices.size();
+		double totalSum=0;
+		
+		for(int i=0;i<count;i++) {
+			
+			String amountString=productPrices.get(i).getText();
+		    Double price=getFormattedAmount(amountString); //160.00
+		    totalSum=totalSum+price;
+		}
+		
+		 String displaySum=driver.findElement(By.id("com.androidsample.generalstore:id/totalAmountLbl")).getText();
 		 
-	 int count=productPrices.size();
-	 double totalSum=0;
-	 for(int i=0;i<count;i++) {
+		 Double displayFormattedsum=getFormattedAmount(displaySum);
+		 Assert.assertEquals(displayFormattedsum, totalSum);
 		 
-		String amountString= productPrices.get(i).getText();
-		//$160.00
-		Double price=getFormattedAmount(amountString);
-		totalSum=totalSum+price;
-	 }
-	 
-	 String displaySum=driver.findElement(By.id("com.androidsample.generalstore:id/totalAmountLbl")).getText();
-	 
-	 Double displayFormattedsum=getFormattedAmount(displaySum);
-	 
-	 
-	 Assert.assertEquals(totalSum, displayFormattedsum);
-	WebElement ele= driver.findElement(By.id("com.androidsample.generalstore:id/termsButton"));
-	 longPressAction(ele);
-	 
-	 String alertTitle=driver.findElement(By.id("com.androidsample.generalstore:id/alertTitle")).getText();
-	 Assert.assertEquals(alertTitle, "Terms Of Conditions");
-	 
-	 
-	 driver.findElement(By.id("android:id/button1")).click();
-	 driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
-	 
-	 driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
-	 
-	 Thread.sleep(3000);
-	 
-	 
+		 WebElement ele=driver.findElement(By.id("com.androidsample.generalstore:id/termsButton"));
+		 longPressAction(ele);
+		 
+		 String alertTitle=driver.findElement(By.id("com.androidsample.generalstore:id/alertTitle")).getText();	
+		 Assert.assertEquals(alertTitle, "Terms Of Conditions");
+		 
+		 driver.findElement(By.id("android:id/button1")).click();
+		 driver.findElement(AppiumBy.className("android.widget.CheckBox")).click();
+		 driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed")).click();
+		 
+		 
 			 }
 }

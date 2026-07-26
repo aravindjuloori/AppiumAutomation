@@ -38,10 +38,15 @@ public class BaseTest {
 		service.start(); // To start appium server
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		//options.setDeviceName("10BE1Y0BZM0012Y");
-		options.setDeviceName("AravindEmulator");
+		options.setDeviceName("10BE1Y0BZM0012Y");
+//		options.setDeviceName("AravindEmulator");
 		options.setPlatformName("Android");
-		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setChromedriverExecutable("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\chromedriver.exe");
+		
+		
+//		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		
 
 		// Android device or ios device
 		// appium code --> appium server
@@ -83,10 +88,9 @@ public class BaseTest {
 	}
 
 	public Double getFormattedAmount(String amount) {
-		Double price = Double.parseDouble(amount.substring(1));
-		return price;
-
-	}
+	Double price=Double.parseDouble(amount.substring(1));
+	return price;
+}
 
 	@AfterClass
 	public void tearDown() {
