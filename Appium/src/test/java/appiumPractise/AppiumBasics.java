@@ -12,7 +12,7 @@ public class AppiumBasics extends BaseTest {
 	public void WifiSettings() {
 
 		driver.findElement(AppiumBy.accessibilityId("Preference")).click(); // Accessibility Id
-		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click(); // Xpath
+		driver.findElement(By.xpath("//android.widget.TextView[@content-desc='3. Preference dependencies']")).click(); // Xpath
 		driver.findElement(By.id("android:id/checkbox")).click();
 		driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
 		driver.findElement(By.id("android:id/edit")).sendKeys("Aravind5G wifi");
