@@ -6,8 +6,13 @@ import java.net.URI;
 import java.net.URL;
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -46,6 +51,30 @@ public class BaseTest {
 		driver = new AndroidDriver(appiumserverurl, options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+	}
+
+	public void longPressAction(WebElement ele) {
+
+		((JavascriptExecutor) driver).executeScript("mobile:longClickGesture",
+				ImmutableMap.of("elementId", ((RemoteWebElement) ele).getId(), "Duration", 2000));
+	}
+
+	public void scrollToEndAction() {
+		boolean canScrollMore;
+		do {
+			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile:scrollGesture", ImmutableMap
+					.of("left", 100, "top", 100, "height", 200, "width", 200, "direction", "down", "percent", 3.0));
+		} while (canScrollMore);
+	}
+	
+	public void swipeAction(WebElement ele,String direction) {
+		((JavascriptExecutor)driver).executeScript("mobile:swipeGesture",
+				ImmutableMap.of("elementId",((RemoteWebElement)ele).getId(),"direction",direction,"percent",0.75));
+	}
+	
+	public void dragGesture(WebElement source,int endX,int endY) {
+		((JavascriptExecutor)driver).executeScript("mobile:dragGesture",
+				ImmutableMap.of("elementId",((RemoteWebElement)source).getId(),"endX",endX,"endY",endY));
 	}
 
 	@AfterClass

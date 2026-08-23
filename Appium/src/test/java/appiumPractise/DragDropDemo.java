@@ -13,12 +13,10 @@ public class DragDropDemo extends BaseTest{
 	public void DragDropTest() throws InterruptedException {
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 		driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
-		
 		WebElement source=driver.findElement(By.id("io.appium.android.apis:id/drag_dot_1"));
 		dragGesture(source,619,560);
 		
 		Thread.sleep(3000);		
-		
 		String result=driver.findElement(By.id("io.appium.android.apis:id/drag_result_text")).getText();
 		Assert.assertEquals(result,"Dropped!");
 		
