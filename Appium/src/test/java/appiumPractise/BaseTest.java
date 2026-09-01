@@ -36,11 +36,15 @@ public class BaseTest {
 		service.start();
 
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("10BE1Y0BZM0012Y");
+//		options.setDeviceName("10BE1Y0BZM0012Y");
+		options.setDeviceName("emulator-5554 ");
 		options.setPlatformName("Android");
-		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-//		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
-
+		//options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		
+		
+		options.setChromedriverExecutable("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\chromedriver.exe");
+		
 //		AndroidDriver driver=new AndroidDriver(new URL("http://127.0.0.1:4723"),options);  //if java version is below 20 it will work because java version above 20 URL class is deprecated
 //		AndroidDriver driver=new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(),options); 
 
@@ -76,7 +80,11 @@ public class BaseTest {
 		((JavascriptExecutor)driver).executeScript("mobile:dragGesture",
 				ImmutableMap.of("elementId",((RemoteWebElement)source).getId(),"endX",endX,"endY",endY));
 	}
-
+	
+	public Double getFormattedAmount(String amount) {
+		Double price=Double.parseDouble(amount.substring(1));
+		return price;
+	}
 	@AfterClass
 	public void teardown() {
 

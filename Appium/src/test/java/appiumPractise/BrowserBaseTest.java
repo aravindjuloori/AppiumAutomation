@@ -30,8 +30,8 @@ public class BrowserBaseTest {
 
 		// Setting the Capabilities
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("10BE1Y0BZM0012Y");
-//		options.setPlatformName("Android");
+//		options.setDeviceName("10BE1Y0BZM0012Y");
+		options.setDeviceName("emulator-5554 ");
 		options.setChromedriverExecutable("C:\\Users\\Aravind\\git\\Appium\\Appium\\src\\test\\java\\resources\\chromedriver.exe");
 		// required
 		options.setCapability("browserName", "Chrome");
